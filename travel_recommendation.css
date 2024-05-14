@@ -21,19 +21,28 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 nav ul {
     list-style-type: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav ul li {
-    display: inline;
+    font-size: large;
     margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 nav div {
-    display: inline;
+
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 nav a {
@@ -44,16 +53,62 @@ nav a {
 nav a,
 nav a:visited,
 nav div {
-    color:rgb(2, 85, 10);
+    color:rgb(25, 137, 122);
+}
+
+nav a:hover {
+    color: rgb(196, 255, 255);
 }
 
 #greeting {
-    background-color: rgb(255, 148, 148);
-    width: 300px;
-    height: 200px;
+    background-color: rgb(71, 181, 175, 0.5);
+    padding: 20px 20px 20px 20px;
+    
 }
 
 #greeting h1 {
     color: white;
-    font-size: 40px;
+    font-size: 46px;
+    padding-bottom: 20px;
+}
+
+button {
+    background: rgb(25, 137, 122);
+    border: none;
+    width: 60px;
+    height: 30px;
+    color: rgb(196, 255, 255);
+    
+    cursor: pointer; 
+}
+
+button:hover {
+    background: rgb(89, 167, 177);
+}
+
+#search {
+    border: none;
+    text-align: center;
+    background-color: white;
+    width: 200px;
+    height: 30px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 130px;
+    
+}
+
+section div {
+   /* border: 2px solid rgb(0, 255, 255); */
+    width: 500px;
+    height: 380px;
+}
+
+#greeting p {
+    padding-right: 130px;
+    color: white;
 }
