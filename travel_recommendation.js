@@ -1,8 +1,16 @@
 
 function searchFunc() {
-    let keyword = document.getElementById("search").value;
+    let keyword = document.getElementById("search").value.toLowerCase();
     let result = document.getElementById("result")
     document.getElementById("result").style.backgroundColor = "rgba(62, 158, 153, 0.5)"
+    
+    if(keyword === "beach") {
+        keyword = "beaches";
+    } else if(keyword === "temple") {
+        keyword = "temples";
+    } else if(keyword === "country") {
+        keyword = "countries";
+    }
 
     fetch('travel_recommendation_api.json')
         .then(response => response.json())
@@ -12,7 +20,6 @@ function searchFunc() {
                 result.innerHTML = "";
 
                 for (let city of data[keyword]) {
-                    console.log(city.name) // city names
                     result.innerHTML += `<div class="results"><img src="${city.imageUrl}" width="100% height="250px"><br>
                     <h3>${city.name}</h3><br>
                     <p>${city.description}</p><br>
@@ -24,13 +31,16 @@ function searchFunc() {
                 for (let x of data[keyword]) {
                     let cities = x.cities;
                     for (let city of cities) {
-                        console.log(city.name) // city names
                         result.innerHTML += `<div class="results"><img src="${city.imageUrl}" width="100% height="250px"><br>
                         <h3>${city.name}</h3><br>
                         <p>${city.description}</p><br>
                         </div>`
                     }
                 }
+            } else if (keyword !== "beaches" || keyword !== "temples" || keyword !== "countries") {
+                result.innerHTML = "";
+                result.innerHTML += `<div><p>There is no result for this search term.</p></div>`
+                
             }
         })
         .catch(error => {
@@ -38,14 +48,11 @@ function searchFunc() {
     });
 }
 
+function clear(){
+    let result = document.getElementById("result")
+    result.innerHTML = "";
+    result.style.backgroundColor = "";
+    document.getElementById("search").value = "";
+}
 
-
-/*
-keywords:
--beaches
--temples
-countries
-
-+variations: beach, beaches, Beach, BEACH
-*/
-
+btnReset.addEventListener('click', clear);
