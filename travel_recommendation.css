@@ -67,7 +67,8 @@ nav a:hover {
 #greeting {
     background-color: rgba(62, 158, 153, 0.5);
     padding: 20px 20px 20px 20px;
-    
+    width: 500px;
+    height: 380px;
 }
 
 #greeting h1 {
@@ -100,17 +101,12 @@ button:hover {
 
 #section1 {
     display: flex;
-    align-items: center;
+    
     justify-content: space-around;
     margin-top: 130px;
     
 }
 
-#section1 div {
-   /* border: 2px solid rgb(0, 255, 255); */
-    width: 500px;
-    height: 380px;
-}
 
 #greeting p {
     padding-right: 130px;
@@ -254,5 +250,12 @@ button:hover {
     height: 30px;
 }
 
+#result {
+    width: 500px;
+    padding: 10px 10px;
+}
 
+#result h3, #result p {
+    color: white;
+}
 
